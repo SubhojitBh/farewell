@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great!</title>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: url('img2.png') no-repeat center center;
+      background-size: cover;
+      animation: slideIn 6s ease-in forwards;
+      animation-delay: 0.1s;
+    }
+
+    @keyframes slideIn {
+      from { left: -100%; }
+      to   { left:   0%; }
+    }
+
+    /* Centered content */
+    .message {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .message h1 {
+      font-family: Arial, sans-serif;
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin: 0 0 20px;
+    }
+
+    .message a {
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      color: #fff;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image" id="bg"></div>
+  
+  <div class="message">
+    <h1>Great, see you there!</h1>
+    <a href="https://forms.gle/your-google-form-id" target="_blank">Please fill the Google form</a>
+    <br><br>
+    <audio id="bg-audio">
+        <source src="aud.ogg" type="audio/ogg">
+        <source src="aud.mp3" type="audio/mpeg">
+      </audio>
+
+      <div>Click</div>
+      
+  </div>
+  <script>
+  window.addEventListener('click', () => {
+    const audio = document.getElementById('bg-audio');
+    if (audio) {
+      audio.play();
+    }
+  }, { once: true });
+</script>
+</body>
+</html>
